@@ -1,18 +1,7 @@
-# CS 4641 Fall 2022 Team 7 - Project Proposal
+# CS 4641 Fall 2022 Team 7 
 
+# Music Mood Predictor
 
-## Introduction/Background
-Text
+# Live Website
+## https://zhandrew4.github.io/cs4641-team7-pages/
 
-## Problem Definition
-Text
-
-## Methods
-Text
-
-## Potential Results and Discussion
-Text
-
-## References
-
-## Contribution Table

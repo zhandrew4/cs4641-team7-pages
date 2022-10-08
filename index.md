@@ -16,11 +16,9 @@ layout: default
     *  [_Potential Results_](#results_header)
     *  [_Gantt Chart_](#gantt_header)
     *  [_Contribution Table_](#contributions_header)
+    *  [_Proposal Video_](#prop_video_header)
     *  [_References_](#references_header)
    
-
-
-
 
 
 <h1 id = "proposal_header"> Proposal </h1>
@@ -47,6 +45,8 @@ We hope to predict the emotions/mood of a song based on its musical/audio featur
 
 <h2 id = "gantt_header"> Group Gantt Chart </h2>
 
+![Gantt Chart](/Gantt Chart.png)
+
 [Link to Full Gantt Chart](https://docs.google.com/spreadsheets/d/1LuajRhGWIpd4FIZey0VL58gxuJHQipyN/edit?usp=sharing&ouid=104478584403003139152&rtpof=true&sd=true)
 
 <h2 id = "contributions_header"> Contributions </h2>
@@ -59,6 +59,10 @@ We hope to predict the emotions/mood of a song based on its musical/audio featur
 | Gillian Kearney  | Gantt Chart <br> Contribution Management                                        | TBD                | TBD                |
 | Nathan Miao      | Project Webpage Creation <br> Video Recording                                   | TBD                | TBD                |
 
+<h2 id = "prop_video_header"> Proposal Video </h2>
+
+[Link to Youtube Video](https://www.youtube.com/watch?v=H-87kh8yuE4)
+
 <h2 id = "references_header"> References </h2>
 
 Bischoff, K., Firan, C. S., Paiu, R., Nejdl, W., Laurier, C., & Sordo, M. (2009) Music Mood and Theme Classification - A Hybrid Approach. Proceedings of the 10th International Society for Music Information Retrieval Conference, ISMR 2009, 657-662. https://www.researchgate.net/publication/220723819_Music_Mood_and_Theme_Classification_-_a_Hybrid_Approach
@@ -68,122 +72,3 @@ Laurier, C., Grivolla, J., & Herrera, P. (2018). Multimodal Music Mood Classific
 Pyrovolakis, K., Tzouveli P. ,& Stamou, G. (2022). Multi-Modal Song Mood Detection with Deep Learning. Sensors, 22(3), 1065. https://doi.org/10.3390/s22031065
 
 Veas, C. (2020, August 15). Predicting the Music Mood of a Song with Deep Learning. Towards Data science. https://towardsdatascience.com/predicting-the-music-mood-of-a-song-with-deep-learning-c3ac2b45229e
-
-
-<!---
-There should be whitespace between paragraphs.
-
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}") 
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
--->

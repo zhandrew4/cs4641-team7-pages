@@ -180,7 +180,7 @@ Despite the poor clustering, however, it seems that K-Means did successfully con
 | Nathan Miao      | Project Webpage Creation <br> Video Recording                                   | Data Cleaning <br> Website Updates | TBD                |
 
 
-References
+<h2 id = "references_midterm"> References </h2>
 
 Bischoff, K., Firan, C. S., Paiu, R., Nejdl, W., Laurier, C., & Sordo, M. (2009) Music Mood and Theme Classification - A Hybrid Approach. Proceedings of the 10th International Society for Music Information Retrieval Conference, ISMR 2009, 657-662. https://www.researchgate.net/publication/220723819_Music_Mood_and_Theme_Classification_-_a_Hybrid_Approach
 

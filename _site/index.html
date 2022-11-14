@@ -223,7 +223,7 @@
 
 <h2 id="results_midterm"> Results and Discussions </h2>
 
-<p><ins> PCA </ins></p>
+<h3><ins> PCA </ins></h3>
 
 <p>PCA was first performed with no dimensionality reduction to analyze the features and all of the principal components (12 components). The figure below shows the percentage of the variance in the data explained by each principal component.</p>
 
@@ -237,7 +237,7 @@
 
 <p>From this, we can see that the first principal component incorporates mainly energy, loudness, and acousticness, the second component mainly involves danceability and valence, the third component deals with the key and mode (major/minor), and the fourth component focuses on whether or not a track is a live recording with an audience (cheering and talking in the background). Overall, it seems that the energy, loudness, and acousticness of a song are most impactful in determining its characteristics, followed closely by danceability and valence.</p>
 
-<p><ins> K-Means </ins></p>
+<h3><ins> K-Means </ins></h3>
 
 <p>Using the 7 features derived from PCA, we first run K-Means as an unsupervised clustering method to group songs together and consolidate the many labels within our original dataset. To determine the optimal number of clusters, we created 9 different K-Means models ranging from 2 to 10 clusters and evaluated each one using both the elbow method and silhouette coefficients.</p>
 

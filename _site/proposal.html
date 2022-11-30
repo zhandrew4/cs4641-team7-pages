@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=4e741216c02cf612f34b3c4494c5ec7d1fca3ff1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=bef95d39d271e9e43adbcc1a140535b329cd86d6">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Welcome to our Project Proposal | Music Mood Classification</title>
@@ -58,9 +58,105 @@
       <section id="main_content" class="inner">
         <h1 id="welcome-to-our-project-proposal">Welcome to our Project Proposal</h1>
 
-<p><em>yay</em></p>
+<p><a href="./">Back To Main Site</a></p>
 
-<p><a href="./">back</a></p>
+<h1 id="table-of-contents">Table of Contents</h1>
+
+<ul>
+  <li><a href="#intro_header"><em>Introduction/Background</em></a></li>
+  <li><a href="#problem_header"><em>Problem Definition</em></a></li>
+  <li><a href="#methods_header"><em>Methods</em></a></li>
+  <li><a href="#results_header"><em>Potential Results</em></a></li>
+  <li><a href="#gantt_header"><em>Gantt Chart</em></a></li>
+  <li><a href="#contributions_header"><em>Contribution Table</em></a></li>
+  <li><a href="#prop_video_header"><em>Proposal Video</em></a></li>
+  <li><a href="#references_header"><em>References</em></a></li>
+</ul>
+
+<h2 id="intro_header"> Introduction/Background </h2>
+
+<p>With the rise of digital music, large amounts of music have been made easily available and streaming platforms have made music discovery and sharing much more prevalent. With a large amount of music available, there arises a need for methods to sort through music. While songs can be easily categorized by album, artist, and genre, emotions are highly involved in the perception and enjoyment of music. Many people listen to songs that correspond to specific moods/feelings that they experience. Predicting the mood/sentiment of a song allows music to be sorted by its associated emotions, enabling users to easily discover and find songs and generate playlists suited to their different situations and moods.</p>
+
+<p>Existing work has been done on classifying songs based on lyrical content and genre, however, the emotions conveyed by a song remain an important aspect of how music is consumed. Previous works on classifying music moods have also used multilabel classification and convolutional neural networks to identify the mood of various songs.</p>
+
+<h2 id="problem_header"> Problem Definition </h2>
+
+<p>Given the various audio features and characteristics of a song, we aim to predict the overall mood of the song. Additionally, we wish to group songs of similar moods together to see how different combinations of audio/musical features result in different conveyed emotions. This would allow people to easily find music that suits their current situation/feelings, resulting in better overall enjoyment.</p>
+
+<h2 id="methods_header"> Methods </h2>
+
+<p>We wish to apply neural networks and classification algorithms such as random forests or naive Bayes classifiers to classify music using more specific sentiment keywords, rather than more general mood categories. Additionally, we potentially want to use clustering algorithms such as K-Means, GMM, and/or DBScan to group songs by mood and see how different musical/audio features correspond to different sentiment keywords, and if sentiment keywords/tags are indeed consistent with audio features.</p>
+
+<p>Our dataset sourced from Kaggle contains a song’s title and artist, in addition to sentiment labels derived from social tags on Last.fm. Each song is also associated with a unique Spotify ID, from which we can obtain more detailed musical features from Spotify’s API.</p>
+
+<h2 id="results_header"> Potential Results </h2>
+
+<p>We hope to predict the emotions/mood of a song based on its musical/audio features. Additionally, we hope to discover how different musical features contribute to the overall mood of a song. If successful, such a model can be used to create more effective music recommendation tools or playlist creation tools that can provide users with songs suited to their current moods.</p>
+
+<h2 id="gantt_header"> Group Gantt Chart </h2>
+
+<p><img src="/Gantt%20Chart.png" alt="Gantt Chart" /></p>
+
+<p><a href="https://docs.google.com/spreadsheets/d/1LuajRhGWIpd4FIZey0VL58gxuJHQipyN/edit?usp=sharing&amp;ouid=104478584403003139152&amp;rtpof=true&amp;sd=true">Link to Full Gantt Chart</a></p>
+
+<h2 id="contributions_header"> Contributions </h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Name</th>
+      <th style="text-align: center">Project Proposal</th>
+      <th style="text-align: center">Midterm Report</th>
+      <th style="text-align: center">Final Presentation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Andrew Zhang</td>
+      <td style="text-align: center">Data Sourcing <br /> Project Research <br /> Proposal Write-Up <br /> Video Recording</td>
+      <td style="text-align: center">TBD</td>
+      <td style="text-align: center">TBD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Bickston Laenger</td>
+      <td style="text-align: center">Proposal Write-Up <br /> Note: Out Sick</td>
+      <td style="text-align: center">TBD</td>
+      <td style="text-align: center">TBD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Blake Watson</td>
+      <td style="text-align: center">Project Webpage Creation <br /> Video Recording</td>
+      <td style="text-align: center">TBD</td>
+      <td style="text-align: center">TBD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Gillian Kearney</td>
+      <td style="text-align: center">Gantt Chart <br /> Contribution Management</td>
+      <td style="text-align: center">TBD</td>
+      <td style="text-align: center">TBD</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Nathan Miao</td>
+      <td style="text-align: center">Project Webpage Creation <br /> Video Recording</td>
+      <td style="text-align: center">TBD</td>
+      <td style="text-align: center">TBD</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="prop_video_header"> Proposal Video </h2>
+
+<p><a href="https://www.youtube.com/watch?v=H-87kh8yuE4">Link to Youtube Video</a></p>
+
+<h2 id="references_header"> References </h2>
+
+<p>Bischoff, K., Firan, C. S., Paiu, R., Nejdl, W., Laurier, C., &amp; Sordo, M. (2009) Music Mood and Theme Classification - A Hybrid Approach. Proceedings of the 10th International Society for Music Information Retrieval Conference, ISMR 2009, 657-662. https://www.researchgate.net/publication/220723819<em>Music_Mood_and_Theme_Classification</em>-_a_Hybrid_Approach</p>
+
+<p>Laurier, C., Grivolla, J., &amp; Herrera, P. (2018). Multimodal Music Mood Classification Using Audio and Lyrics. Seventh International Conference on Machine Learning and Applications, 2018, 688-693. https://doi.org/10.1109/ICMLA.2008.96</p>
+
+<p>Pyrovolakis, K., Tzouveli P. ,&amp; Stamou, G. (2022). Multi-Modal Song Mood Detection with Deep Learning. Sensors, 22(3), 1065. https://doi.org/10.3390/s22031065</p>
+
+<p>Veas, C. (2020, August 15). Predicting the Music Mood of a Song with Deep Learning. Towards Data science. https://towardsdatascience.com/predicting-the-music-mood-of-a-song-with-deep-learning-c3ac2b45229e</p>
 
       </section>
     </div>

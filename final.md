@@ -127,7 +127,7 @@ Similar to the earlier case, despite the relatively low silhouette coefficient, 
 
 <h3><ins> DBScan </ins></h3>
 
-First, DBScan was used to create clusters based on the 7 features given by PCA. DBScan uses 2 hyperparameters, MinPts (Min_Samples) and Eps. The value of MinPts is taken as twice the number of features. In this case, we took MinPts as 14. The value of Eps was determined using the elbow method, comparing the distances to the 14th nearest neighbor for each point. As shown in the graph below (Fig 15), the “elbow” or “knee” occurs at a distance of 2.229, which we then use as the value of Eps.
+First, DBScan was used to create clusters based on the 7 features given by PCA. DBScan uses 2 hyperparameters, MinPts (Min_Samples) and Eps. The value of MinPts is taken as twice the number of features. In this case, we took MinPts as 14. The value of Eps was determined using the elbow method, comparing the distances to the 14th nearest neighbor for each point. As shown in the graph below (Fig. 16), the “elbow” or “knee” occurs at a distance of 2.229, which we then use as the value of Eps.
 
 ![Figure 16](/Final Figure 16.png)
 
@@ -139,11 +139,11 @@ Running DBScan with MinPts of 14 and Eps of 2.229 results in 2 clusters along wi
 
 ![Figure 19](/Final Figure 19.png)
 
-DBScan is able to separate the data points into 2 clusters, however, one of the clusters is significantly larger than the other. The 2 clusters do seem to be much more separated and distinct than those given by K-Means, which is reflected in the relatively higher silhouette coefficient of 0.475. While the clusters given by DBScan have better metrics, they are very unbalanced, and therefore are less useful for the supervised learning models we plan to use. We can also examine the labels contained within each cluster as shown below (Fig 15). While the smaller cluster seems to form a distinct category of labels with a soft and mysterious mood, the larger cluster lacks a specific theme that ties the labels together.
+DBScan is able to separate the data points into 2 clusters, however, one of the clusters is significantly larger than the other. The 2 clusters do seem to be much more separated and distinct than those given by K-Means, which is reflected in the relatively higher silhouette coefficient of 0.475. While the clusters given by DBScan have better metrics, they are very unbalanced, and therefore are less useful for the supervised learning models we plan to use. We can also examine the labels contained within each cluster as shown below (Fig. 20). While the smaller cluster seems to form a distinct category of labels with a soft and mysterious mood, the larger cluster lacks a specific theme that ties the labels together.
 
 ![Figure 20](/Final Figure 20.png)
 
-We then try DBScan using 3 PCA features instead of 7. Here, we take MinPts as 5 and use the same elbow method to determine the optimal value for Eps by comparing the distance to the 5th nearest neighbor of each point. As shown in the graph below (Fig 21), the “elbow” occurs at a distance of 0.375, which we then take as the value of Eps. 
+We then try DBScan using 3 PCA features instead of 7. Here, we take MinPts as 5 and use the same elbow method to determine the optimal value for Eps by comparing the distance to the 5th nearest neighbor of each point. As shown in the graph below (Fig. 21), the “elbow” occurs at a distance of 0.375, which we then take as the value of Eps. 
 
 ![Figure 21](/Final Figure 21.png)
 
@@ -155,7 +155,7 @@ Notably, the clusters given by DBScan with 3 features are even more skewed than 
 
 ![Figure 23](/Final%20Figure%2023.png)
 
-Overall, comparing DBScan to K-Means, the clusters given by DBScan have higher silhouette coefficients and are indeed more separated and distinct than those given by K-Means, as shown below (Figure 23). However, despite the poor metrics, the clusters given by K-Means do a much better job of consolidating the original sentiment labels into similar categories. The categories given by K-Means seem much more learnable for the supervised models we plan to use. Since K-Means performed better with only 3 PCA features, we will use the clusters given by that K-Means as the ground-truth labels to be learned using supervised learning methods.
+Overall, comparing DBScan to K-Means, the clusters given by DBScan have higher silhouette coefficients and are indeed more separated and distinct than those given by K-Means, as shown below (Fig. 24). However, despite the poor metrics, the clusters given by K-Means do a much better job of consolidating the original sentiment labels into similar categories. The categories given by K-Means seem much more learnable for the supervised models we plan to use. Since K-Means performed better with only 3 PCA features, we will use the clusters given by that K-Means as the ground-truth labels to be learned using supervised learning methods.
 
 ![Figure 24](/Final%20Figure%2024.png)
 
@@ -169,13 +169,13 @@ Instead of the original 265 different sentiment labels in the dataset, we used K
 
 Two Logistic Regression models were run, one using 3 PCA features/components and the other using 7 PCA features. Both used the labels given by the K-Means clustering as ground truths. The dataset was split into training and testing sets, with 80% of songs in the former, and 20% in the latter.
 
-The accuracy, precision, and F-scores for both Logistic Regression models are shown below (Fig. 24). The confusion matrices for both models are also displayed below (Fig. 25). Notably, all three metrics are exceptionally high for both Logistic Regression models, with an accuracy of 99.8%. Additionally, there seems to be very little difference between the model using only 3 features and the model using 7 features. This is a likely indicator that only the 3 main PCA components are sufficient to capture the information needed to fully separate the different mood categories apart.
+The accuracy, precision, and F-scores for both Logistic Regression models are shown below (Fig. 25). The confusion matrices for both models are also displayed below (Fig. 26). Notably, all three metrics are exceptionally high for both Logistic Regression models, with an accuracy of 99.8%. Additionally, there seems to be very little difference between the model using only 3 features and the model using 7 features. This is a likely indicator that only the 3 main PCA components are sufficient to capture the information needed to fully separate the different mood categories apart.
 
 ![Figure 25](/Final Figure 25.png)
 
 ![Figure 26](/Final%20Figure%2026.png)
 
-The high accuracy of Logistic Regression could be due to how the clusters are formed by K-Means. As shown below (Fig. 26), the clusters formed by K-Means separate the dataset into four distinct sections. Visually, the clusters are linearly separable, so clear decision boundaries can be learned by the Logistic Regression model.  
+The high accuracy of Logistic Regression could be due to how the clusters are formed by K-Means. As shown below (Fig. 27), the clusters formed by K-Means separate the dataset into four distinct sections. Visually, the clusters are linearly separable, so clear decision boundaries can be learned by the Logistic Regression model.  
 
 ![Figure 27](/Final%20Figure%2027.png)
 
@@ -183,7 +183,7 @@ The high accuracy of Logistic Regression could be due to how the clusters are fo
 
 Two Random Forest models were trained using both 3 PCA features and 7 PCA features. Once more, we separated the dataset using 80% for training and 20% for testing. For Random Forests, we tuned two hyperparameters to improve the model performance: n_estimators and max_depth. This was done using Randomized Search Cross Validation (courtesy of sklearn), where K-fold cross-validation is repeatedly performed with randomly sampled hyperparameter values. We used 5-fold cross-validation, with 10 iterations of randomized search, which resulted in the optimal values of 180 for n_estimators and 70 for max_depth. 
 
-The accuracy, precision, and F-scores of both Random Forest models are shown below (Fig. 27), along with the confusion matrices (Fig. 28). Both models have very high metrics, performing extremely well with around 98% accuracy. It should be noted that the model using 7 features performed slightly worse, with a very small 0.01% decrease in accuracy. This could be attributed to how easily susceptible Random Forest classifiers are to overfitting, with the extra features introducing unnecessary noise. This could also simply be attributed to random chance, as a 0.01% decrease in accuracy is barely noticeable and could likely not be reproduced.
+The accuracy, precision, and F-scores of both Random Forest models are shown below (Fig. 28), along with the confusion matrices (Fig. 29). Both models have very high metrics, performing extremely well with around 98% accuracy. It should be noted that the model using 7 features performed slightly worse, with a very small 0.01% decrease in accuracy. This could be attributed to how easily susceptible Random Forest classifiers are to overfitting, with the extra features introducing unnecessary noise. This could also simply be attributed to random chance, as a 0.01% decrease in accuracy is barely noticeable and could likely not be reproduced.
 
 ![Figure 28](/Final%20Figure%2028.png)
 

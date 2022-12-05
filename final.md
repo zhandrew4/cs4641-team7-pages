@@ -149,15 +149,15 @@ We then try DBScan using 3 PCA features instead of 7. Here, we take MinPts as 5 
 
 Running DBScan with MinPts of 5 and Eps of 0.375 results in 3 clusters with outliers. The resulting clusters are then displayed below (Fig. 22).
 
-![Figure 22](/Final%20Figure%2022.png)
+![Figure 22](/Final Figure 22.png)
 
 Notably, the clusters given by DBScan with 3 features are even more skewed than the clusters using 7 features.  Cluster 1 is much larger, containing the majority of the data points while the remaining two clusters only each contain a small portion of points. However, the clusters have a silhouette coefficient of 0.398 and are relatively separated and distinct, even with unbalanced sizes. Despite the higher silhouette coefficient in comparison to its K-Means counterpart, the clusters fail to properly consolidate the initial labels, leaving almost all labels in the main cluster. Additionally, as shown below, there is no clear pattern/similarity between the labels contained in the clusters. 
 
-![Figure 23](/Final%20Figure%2023.png)
+![Figure 23](/Final Figure 23.png)
 
 Overall, comparing DBScan to K-Means, the clusters given by DBScan have higher silhouette coefficients and are indeed more separated and distinct than those given by K-Means, as shown below (Fig. 24). However, despite the poor metrics, the clusters given by K-Means do a much better job of consolidating the original sentiment labels into similar categories. The categories given by K-Means seem much more learnable for the supervised models we plan to use. Since K-Means performed better with only 3 PCA features, we will use the clusters given by that K-Means as the ground-truth labels to be learned using supervised learning methods.
 
-![Figure 24](/Final%20Figure%2024.png)
+![Figure 24](/Final Figure 24.png)
 
 This phenomenon could be due to the fact that our initial dataset does not form any distinct clusters, and all the data points instead seem to form one large cluster. This is especially apparent when the dataset is visualized using the 3 PCA features (Fig. 14 and 21). Therefore, a density-based algorithm like DBScan will end up fitting almost all of the data points into one cluster, since they are all relatively close to each other, leaving the remaining points as outliers or small clusters. On the other hand, with its predetermined number of centers, K-Means ends up simply partitioning the data set into 4 separate sections. As previously mentioned, the clusters given by K-Means are then relatively larger and closer together, resulting in a lower silhouette coefficient. However, K-Means is able to partition the data points evenly based on their similarity and successfully consolidates the original sentiment labels into 4 new categories.
 
@@ -173,11 +173,11 @@ The accuracy, precision, and F-scores for both Logistic Regression models are sh
 
 ![Figure 25](/Final Figure 25.png)
 
-![Figure 26](/Final%20Figure%2026.png)
+![Figure 26](/Final Figure 26.png)
 
 The high accuracy of Logistic Regression could be due to how the clusters are formed by K-Means. As shown below (Fig. 27), the clusters formed by K-Means separate the dataset into four distinct sections. Visually, the clusters are linearly separable, so clear decision boundaries can be learned by the Logistic Regression model.  
 
-![Figure 27](/Final%20Figure%2027.png)
+![Figure 27](/Final Figure 27.png)
 
 <h3><ins> Random Forest </ins></h3>
 
@@ -185,7 +185,7 @@ Two Random Forest models were trained using both 3 PCA features and 7 PCA featur
 
 The accuracy, precision, and F-scores of both Random Forest models are shown below (Fig. 28), along with the confusion matrices (Fig. 29). Both models have very high metrics, performing extremely well with around 98% accuracy. It should be noted that the model using 7 features performed slightly worse, with a very small 0.01% decrease in accuracy. This could be attributed to how easily susceptible Random Forest classifiers are to overfitting, with the extra features introducing unnecessary noise. This could also simply be attributed to random chance, as a 0.01% decrease in accuracy is barely noticeable and could likely not be reproduced.
 
-![Figure 28](/Final%20Figure%2028.png)
+![Figure 28](/Final Figure 28.png)
 
 ![Figure 29](/Final Figure 29.png)
 
@@ -196,9 +196,9 @@ Using a similar process as before, two Naive Bayes models were trained, one usin
 We then fit the data and predicted the labels using fit and predict methods respectively on the instance of the GaussianNB made from the data for both sets of components. 
 While still above 90%, the accuracies are the lowest of the 3 approaches we used and are pictured below. Again, the accuracy_score, precision_score, and f1_score methods from sklearn were used.
 
-![Figure 30](/Final%20Figure%2030.png)
+![Figure 30](/Final Figure 30.png)
 
-![Figure 31](/Final%20Figure%2031.png)
+![Figure 31](/Final Figure 31.png)
 
 <h2 id = "conclusion_final"> Conclusion </h2>
 

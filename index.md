@@ -15,3 +15,5 @@ Here you can find links to our project proposal, midterm report, and final repor
 * [<span style = "font-size:20px">Project Proposal</span>](/proposal.md)
 
 * [<span style = "font-size:20px">Midterm Report</span>](/midterm.md)
+
+* [<span style = "font-size:20px">Final Report</span>](/final.md)

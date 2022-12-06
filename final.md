@@ -25,7 +25,7 @@ Existing work has been done on classifying songs based on lyrical content and ge
 
 <h2 id = "problem_final"> Problem Definition </h2>
 
-Given the various audio features and characteristics of a song, we aim to predict the overall mood of the song. Additionally, we wish to group songs of similar moods together to see how different combinations of audio/musical features result in different conveyed emotions. This would allow people to easily find music that suits their current situation/feelings, resulting in better overall enjoyment. 
+Given the various audio features and characteristics of a song, we aim to predict the overall mood of the song. Additionally, we wish to group songs of similar moods together to see how different combinations of audio/musical features result in different conveyed emotions. We also want to find the musical features that contribute to creating the emotions a song conveys. This would allow people to easily find music that suits their current situation/feelings, resulting in better overall enjoyment. 
 
 <h2 id = "data_final"> Data Collection </h2>
 
@@ -89,7 +89,7 @@ First, using the 7 features derived from PCA, we run K-Means as an unsupervised 
 The inertia value used in the elbow method is simply the sum of the squared distances from each point to its cluster center. From the graph above (Fig. 4), we can see that while the “elbow” is not very well defined, it seems to occur at around 4 or 5 clusters. 
 For the silhouette coefficients, all values are quite low across the board, however, according to the graph above (Fig. 5), the model with 4 clusters has the maximum silhouette coefficient. 
 
-Since there are 7 features, the data is 7-dimensional and cannot be easily visualized. However, we can plot 2-dimensional “slices” to observe the 4 clusters with respect to two features at a time.
+Since there are 7 features, the data is 7-dimensional and cannot be easily visualized. However, we can plot 2-dimensional “slices” to observe the 4 clusters with respect to two features at a time. 
 
 ![Figure 6](/Final Figure 6.png)
 
@@ -191,16 +191,25 @@ The accuracy, precision, and F-scores of both Random Forest models are shown bel
 
 <h3><ins> Naive Bayes </ins></h3>
 
-Using a similar process as before, two Naive Bayes models were trained, one using 3 PCA features and the other using 7 PCA features. Again, the dataset was split into a testing set and a training set with an 80/20 split respectively. Specifically, Gaussian Naive Bayes was used, with the assumption that all features are independent, and follow a Gaussian distribution. 
+Using a similar process as before, two Naive Bayes models were trained, one using 3 PCA features and the other using 7 PCA features. Again, the dataset was split into a testing set and a training set with an 80/20 split respectively. Specifically, Gaussian Naive Bayes was used, with the assumption that all features are independent and follow a Gaussian distribution. 
 
-We then fit the data and predicted the labels using fit and predict methods respectively on the instance of the GaussianNB made from the data for both sets of components. 
-While still above 90%, the accuracies are the lowest of the 3 approaches we used and are pictured below. Again, the accuracy_score, precision_score, and f1_score methods from sklearn were used.
+The accuracy, precision, and F-score of the Naive Bayes models are shown below (Fig. 30). While Naive Bayes is still able correctly to identify most labels as visualized in the confusion matrices (Fig. 31), it performs significantly worse than both Logistic Regression and Random Forests. Additionally, the Naive Bayes models’ performance differs significantly when using 7 PCA features rather than 4.  The accuracy drops from about 94% all the way to about 90% when 7 PCA features are used. 
 
 ![Figure 30](/Final Figure 30.png)
 
 ![Figure 31](/Final Figure 31.png)
 
+The poor performance of Gaussian Naive Bayes is likely due to the fact that it is a generative model, which makes many assumptions when modeling the priors and likelihood. Notably, the different features are assumed to follow a Gaussian distribution and be independent of each other. These assumptions likely introduce errors, which are further compounded when more features are considered. These errors are much more apparent when the labels given by the K-Means clusters form distinct sections that are linearly separable, allowing for the decision bounds to be easily estimated directly. 
+
 <h2 id = "conclusion_final"> Conclusion </h2>
+
+Overall, we were able to successfully consolidate the original 265 different sentiment labels into four main mood categories using K-Means. These labels loosely correspond to the four emotions of happy/carefree, angry/aggressive, sensual, and peaceful. While the clusters given by DBScan did perform better in terms of metrics, they were unevenly distributed, with the majority of the points falling into a singular cluster. As previously mentioned, this is likely because the dataset does not form clusters of varying density, but rather takes the shape of one large cluster instead.
+
+The four main mood categories we identified actually correspond to the four types of moods that occur along the two axes of positivity and intensity. This is reflected by the significant features identified using PCA. We found that the first two principal components mainly correspond to energy, loudness, and danceability which all serve as indicators of a song’s intensity. On the other hand, the second and third principal components mainly incorporate the valence, key, and mode of the music, which indicate the positivity of a song as major or minor. 
+
+Finally, using supervised learning methods, we were able to predict the mood of a song very accurately, with Logistic Regression performing the best when compared to Gaussian Naive Bayes and Random Forests. The model performed much better than expected, achieving over 99% accuracy. This is likely because the clusters created by K-Means are quite distinct, and have clear decision boundaries that are easy to estimate using Logistic Regression. For the same reason, generative models like Gaussian Naive Bayes suffer from additional errors introduced by the assumptions of feature independence and Gaussian distributions.
+
+It should be noted that the songs used for this project are mainly from the early 2000s and 2010s. In the decade since, popular music has evolved and changed significantly, with new genres rising, new musical styles appearing, and new types of instrumentation making their appearance. In the future, this project could be expanded upon to include more recent songs with a wider variety of genres and styles. 
 
 <h2 id = "contributions_final"> Contributions Table </h2>
 
@@ -209,7 +218,7 @@ While still above 90%, the accuracies are the lowest of the 3 approaches we used
 | Andrew Zhang     | Data Sourcing <br> Project Research <br> Proposal Write-Up <br> Video Recording | Data Collection <br> Data Cleaning <br> Feature Reduction/Analysis (PCA) <br> Report Write-Up | Report Write-Up <br> DBScan <br> Logistic Regression <br> Data Visualization |
 | Bickston Laenger | Proposal Write-Up <br> Note: Out Sick                                           | Data Visualization <br> Data Analysis | Report Write-Up <br> Logistic Regression |
 | Blake Watson     | Project Webpage Creation <br> Video Recording                                   | Website Updates | Random Trees <br> Project Webpage |
-| Gillian Kearney  | Gantt Chart <br> Contribution Management                                        | Train and Validate First Model (KMeans) | Naive Bayes |
+| Gillian Kearney  | Gantt Chart <br> Contribution Management                                        | Train and Validate First Model (KMeans) | Naive Bayes <br> Edit Final Video |
 | Nathan Miao      | Project Webpage Creation <br> Video Recording                                   | Data Cleaning <br> Website Updates | Random Trees <br> Project Webpage |
 
 <h2 id = "references_final"> References </h2>
